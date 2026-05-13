@@ -4,7 +4,7 @@ NUNMGPU=$2
 EXPNAME=$3
 SPLIT_ID=$4
 
-# bash run_voc_fsod_finetuning.sh r101 4 scac 1
+# bash run_voc_fsod_finetuning.sh r101 4 sdcc 1
 
 SAVEDIR=./checkpoints/${EXPNAME}
 PRTRAINEDMODEL=./ImageNetPretrained
@@ -57,7 +57,7 @@ TOTAL_TASKS=$((1 * 5))  # 1 seed * 5 shots (鎸夐渶淇敼)
 CURRENT_TASK=0
 
 echo "========================================================================"
-echo "寮€濮?FSOD Few-Shot 寰皟璁粌 (scac + CGCL)"
+echo "寮€濮?FSOD Few-Shot 寰皟璁粌 (sdcc + CGCL)"
 echo "========================================================================"
 echo "閰嶇疆淇℃伅:"
 echo "  - 缃戠粶: ${NET}"

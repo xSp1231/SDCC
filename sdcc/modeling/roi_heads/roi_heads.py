@@ -20,7 +20,7 @@ from .fast_rcnn import ROI_HEADS_OUTPUT_REGISTRY, FastRCNNOutputLayers, FastRCNN
 # This is ours
 from .MemoryQueue import MemoryPrototypeBank
 from .CGCL import ContrastiveHead, CGCLLoss
-from scac.modeling.meta_arch.SPPF import ECA
+from sdcc.modeling.meta_arch.SPPF import ECA
 
 from torch.nn import functional as F
 

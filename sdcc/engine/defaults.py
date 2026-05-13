@@ -13,13 +13,13 @@ from detectron2.utils.logger import setup_logger
 from detectron2.engine import hooks, SimpleTrainer
 from detectron2.utils.collect_env import collect_env_info
 from detectron2.utils.events import TensorboardXWriter, CommonMetricPrinter, JSONWriter
-from scac.data import *
-from scac.modeling import build_model
-from scac.engine.hooks import EvalHookDeFRCN
-from scac.checkpoint import DetectionCheckpointer
-from scac.solver import build_lr_scheduler, build_optimizer
-from scac.evaluation import DatasetEvaluator, inference_on_dataset, print_csv_format, verify_results
-from scac.dataloader import MetadataCatalog, build_detection_test_loader, build_detection_train_loader
+from sdcc.data import *
+from sdcc.modeling import build_model
+from sdcc.engine.hooks import EvalHookDeFRCN
+from sdcc.checkpoint import DetectionCheckpointer
+from sdcc.solver import build_lr_scheduler, build_optimizer
+from sdcc.evaluation import DatasetEvaluator, inference_on_dataset, print_csv_format, verify_results
+from sdcc.dataloader import MetadataCatalog, build_detection_test_loader, build_detection_train_loader
 
 
 __all__ = [
@@ -89,7 +89,7 @@ def default_setup(cfg, args):
 
     rank = comm.get_rank()
     setup_logger(output_dir, distributed_rank=rank, name="fvcore")
-    setup_logger(output_dir, distributed_rank=rank, name="scac")
+    setup_logger(output_dir, distributed_rank=rank, name="sdcc")
     logger = setup_logger(output_dir, distributed_rank=rank)
 
     logger.info(
@@ -393,7 +393,7 @@ class DefaultTrainer(SimpleTrainer):
         Returns:
             torch.nn.Module:
 
-        It now calls :func:`scac.modeling.build_model`.
+        It now calls :func:`sdcc.modeling.build_model`.
         Overwrite it if you'd like a different model.
         """
         model = build_model(cfg)
@@ -408,7 +408,7 @@ class DefaultTrainer(SimpleTrainer):
         Returns:
             torch.optim.Optimizer:
 
-        It now calls :func:`scac.solver.build_optimizer`.
+        It now calls :func:`sdcc.solver.build_optimizer`.
         Overwrite it if you'd like a different optimizer.
         """
         return build_optimizer(cfg, model)
@@ -416,7 +416,7 @@ class DefaultTrainer(SimpleTrainer):
     @classmethod
     def build_lr_scheduler(cls, cfg, optimizer):
         """
-        It now calls :func:`scac.solver.build_lr_scheduler`.
+        It now calls :func:`sdcc.solver.build_lr_scheduler`.
         Overwrite it if you'd like a different scheduler.
         """
         return build_lr_scheduler(cfg, optimizer)
@@ -427,7 +427,7 @@ class DefaultTrainer(SimpleTrainer):
         Returns:
             iterable
 
-        It now calls :func:`scac.data.build_detection_train_loader`.
+        It now calls :func:`sdcc.data.build_detection_train_loader`.
         Overwrite it if you'd like a different data loader.
         """
         return build_detection_train_loader(cfg)
@@ -438,7 +438,7 @@ class DefaultTrainer(SimpleTrainer):
         Returns:
             iterable
 
-        It now calls :func:`scac.data.build_detection_test_loader`.
+        It now calls :func:`sdcc.data.build_detection_test_loader`.
         Overwrite it if you'd like a different data loader.
         """
         return build_detection_test_loader(cfg, dataset_name)

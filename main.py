@@ -3,9 +3,9 @@ from detectron2.utils import comm
 from detectron2.engine import launch
 from detectron2.data import MetadataCatalog
 from detectron2.checkpoint import DetectionCheckpointer
-from scac.config import get_cfg, set_global_cfg
-from scac.evaluation import DatasetEvaluators, verify_results
-from scac.engine import DefaultTrainer, default_argument_parser, default_setup
+from sdcc.config import get_cfg, set_global_cfg
+from sdcc.evaluation import DatasetEvaluators, verify_results
+from sdcc.engine import DefaultTrainer, default_argument_parser, default_setup
 
 
 class Trainer(DefaultTrainer):
@@ -16,10 +16,10 @@ class Trainer(DefaultTrainer):
         evaluator_list = []
         evaluator_type = MetadataCatalog.get(dataset_name).evaluator_type
         if evaluator_type == "coco":
-            from scac.evaluation import COCOEvaluator
+            from sdcc.evaluation import COCOEvaluator
             evaluator_list.append(COCOEvaluator(dataset_name, True, output_folder))
         if evaluator_type == "pascal_voc":
-            from scac.evaluation import PascalVOCDetectionEvaluator
+            from sdcc.evaluation import PascalVOCDetectionEvaluator
             return PascalVOCDetectionEvaluator(dataset_name)
         if len(evaluator_list) == 0:
             raise NotImplementedError(

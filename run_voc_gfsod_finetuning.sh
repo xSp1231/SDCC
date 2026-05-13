@@ -4,7 +4,7 @@ NUNMGPU=$2
 EXPNAME=$3
 SPLIT_ID=$4
 
-# bash run_voc_gfsod_finetuning.sh r101 1 scac 1
+# bash run_voc_gfsod_finetuning.sh r101 1 sdcc 1
 echo "DFS"
 EXP_TIMES=2
 # ----------------------------------------------------------------------- #
@@ -60,7 +60,7 @@ BASE_WEIGHT=${SAVEDIR}/defrcn_det_${NET}_base${SPLIT_ID}/model_reset_surgery.pth
 TOTAL_TASKS=$(( ${EXP_TIMES} * 1 * 5 ))
 CURRENT_TASK=0
 echo "========================================================================"
-echo " plus plus 寮€濮?GFSOD Few-Shot 寰皟璁粌 (scac + CGCL0.5)"
+echo " plus plus 寮€濮?GFSOD Few-Shot 寰皟璁粌 (sdcc + CGCL0.5)"
 echo "  瀹為獙鎬绘鏁? ${EXP_TIMES} | 鍗曟瀹為獙 shots: 1/2/3/5/10 | Seed: 0"
 echo "========================================================================"
 echo "閰嶇疆淇℃伅:"

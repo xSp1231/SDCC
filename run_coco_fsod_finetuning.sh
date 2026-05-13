@@ -3,7 +3,7 @@ NET=$1
 NUNMGPU=$2
 EXPNAME=$3
 
-# bash run_coco_fsod_finetuning.sh r101 4 scac
+# bash run_coco_fsod_finetuning.sh r101 4 sdcc
 
 SAVEDIR=./checkpoints/${EXPNAME}
 PRTRAINEDMODEL=./datasets/ImageNetPretrained
@@ -58,7 +58,7 @@ TOTAL_TASKS=$((1 * 6))  # 1 seed 脳 6 shots (1 2 3 5 10 30)
 CURRENT_TASK=0
 
 echo "========================================================================"
-echo " 寮€濮?COCO FSOD Few-Shot 寰皟璁粌 (scac)"
+echo " 寮€濮?COCO FSOD Few-Shot 寰皟璁粌 (sdcc)"
 echo "========================================================================"
 echo "閰嶇疆淇℃伅:"
 echo "  - 缃戠粶: ${NET}"

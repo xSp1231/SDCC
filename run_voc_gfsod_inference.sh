@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================
 # VOC GFSOD 纯推理脚本（仅 eval，不训练）
-# 用法: bash run_voc_gfsod_inference.sh r101 1 scac 1
+# 用法: bash run_voc_gfsod_inference.sh r101 1 sdcc 1
 # 参数:
 #   $1 NET       网络类型, 如 r101
 #   $2 NUMGPU    GPU 数量

@@ -14,8 +14,8 @@ from detectron2.data import MetadataCatalog
 from .archs import clip
 import copy
 from sklearn.metrics.pairwise import cosine_similarity
-from scac.dataloader import build_detection_test_loader
-from scac.evaluation.archs import resnet101
+from sdcc.dataloader import build_detection_test_loader
+from sdcc.evaluation.archs import resnet101
 
 logger = logging.getLogger(__name__)
 

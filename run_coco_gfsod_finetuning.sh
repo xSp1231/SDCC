@@ -3,7 +3,7 @@ NET=$1
 NUNMGPU=$2
 EXPNAME=$3
 
-# bash run_coco_gfsod_finetuning.sh r101 4 scac
+# bash run_coco_gfsod_finetuning.sh r101 4 sdcc
 
 echo "鍩虹璁粌鍚姩锛坘gc+dc+clip) - COCO Base"
 EXP_TIMES=1
@@ -67,7 +67,7 @@ TOTAL_TASKS=$(( ${EXP_TIMES} * 1 * 6 ))  # 瀹為獙娆℃暟 脳 1 seed 脳 6 s
 CURRENT_TASK=0
 
 echo "========================================================================"
-echo " 寮€濮?COCO GFSOD Few-Shot 寰皟璁粌 (scac)"
+echo " 寮€濮?COCO GFSOD Few-Shot 寰皟璁粌 (sdcc)"
 echo "  瀹為獙鎬绘鏁? ${EXP_TIMES} | shots: 1/2/3/5/10/30 | Seed: 0"
 echo "========================================================================"
 echo "閰嶇疆淇℃伅:"

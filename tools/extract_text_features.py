@@ -13,7 +13,7 @@ import argparse
 import torch
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
-from scac.evaluation.archs import clip
+from sdcc.evaluation.archs import clip
 
 
 VOC_CLASSES = [

@@ -10,7 +10,7 @@ from collections import OrderedDict, defaultdict
 from detectron2.utils import comm
 from detectron2.data import MetadataCatalog
 from detectron2.utils.logger import create_small_table
-from scac.evaluation.evaluator import DatasetEvaluator
+from sdcc.evaluation.evaluator import DatasetEvaluator
 
 
 class PascalVOCDetectionEvaluator(DatasetEvaluator):
